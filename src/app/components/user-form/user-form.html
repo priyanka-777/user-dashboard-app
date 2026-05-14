@@ -1,0 +1,82 @@
+<h2>Add User</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="submit()">
+
+  <div>
+    <input
+      type="text"
+      placeholder="Name"
+      formControlName="name"
+    >
+  </div>
+  <div
+  *ngIf="
+    userForm.get('name')?.touched &&
+    userForm.get('name')?.invalid
+  "
+  class="error"
+>
+  Name is required
+</div>
+
+  <br>
+
+  <div>
+    <input
+      type="email"
+      placeholder="Email"
+      formControlName="email"
+    >
+  </div>
+  <div
+  *ngIf="
+    userForm.get('email')?.touched &&
+    userForm.get('email')?.invalid
+  "
+  class="error"
+>
+  Valid email is required
+</div>
+
+  <br>
+
+  <div>
+    <select formControlName="role">
+
+      <option value="">
+        Select Role
+      </option>
+
+      <option
+        *ngFor="let role of roles"
+        [value]="role"
+      >
+        {{ role }}
+      </option>
+
+    </select>
+  </div>
+  <div
+  *ngIf="
+    userForm.get('role')?.touched &&
+    userForm.get('role')?.invalid
+  "
+  class="error"
+>
+  Role is required
+</div>
+
+  <br>
+
+  <button type="submit">
+    Submit
+  </button>
+
+  <button
+    type="button"
+    (click)="closeModal()"
+  >
+    Cancel
+  </button>
+
+</form>
