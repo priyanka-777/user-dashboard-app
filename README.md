@@ -1,59 +1,202 @@
-# UserDashboardApp
+# User Dashboard App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+A reactive Angular dashboard application built using standalone components, RxJS state management, and Chart.js visualization.
 
-## Development server
+## Features
 
-To start a local development server, run:
+* Dynamic User Dashboard
+* Add User Modal Form
+* Reactive Forms with Validation
+* RxJS BehaviorSubject State Management
+* Dynamic User Table
+* Real-time Pie Chart Updates
+* Lazy Loaded Chart.js Import
+* SSR-safe Chart Rendering
+* Professional Responsive UI
+* Standalone Angular Architecture
+
+---
+
+# Tech Stack
+
+* Angular 21+
+* TypeScript
+* RxJS
+* Chart.js
+* SCSS/SASS
+* Vite
+
+---
+
+# Project Structure
+
+```text
+src/app
+│
+├── components
+│   ├── user-dashboard
+│   └── user-form
+│
+├── models
+│   └── user.ts
+│
+├── services
+│   └── user.service.ts
+```
+
+---
+
+# Functionality
+
+## User Dashboard
+
+Displays:
+
+* User table
+* Role distribution pie chart
+* Add User button
+
+---
+
+## Add User Form
+
+Users can add:
+
+* Name
+* Email
+* Role
+
+Validation includes:
+
+* Required fields
+* Valid email format
+
+---
+
+## Real-time Updates
+
+When a new user is added:
+
+* Table updates automatically
+* Pie chart updates automatically
+
+Implemented using RxJS `BehaviorSubject`.
+
+---
+
+# Lazy Loading
+
+Chart.js is dynamically imported using:
+
+```ts
+const ChartModule = await import('chart.js/auto');
+```
+
+This improves performance by reducing initial bundle size.
+
+---
+
+# SSR Compatibility
+
+Handled Angular SSR/browser rendering issues using:
+
+```ts
+isPlatformBrowser()
+```
+
+This ensures Chart.js renders only in browser environment.
+
+---
+
+# Installation & Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/priyanka-777/user-dashboard-app.git
+```
+
+---
+
+## Navigate to Project
+
+```bash
+cd user-dashboard-app
+```
+
+---
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Run Development Server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+# Production Build
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+# UI Theme
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Theme colors used:
 
-```bash
-ng test
-```
+* `#383838`
+* `#1c4980`
 
-## Running end-to-end tests
+Input/Button Height:
 
-For end-to-end (e2e) testing, run:
+* `48px`
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+# Assignment Requirements Covered
 
-## Additional Resources
+* User Table
+* Modal Popup Form
+* Form Validation
+* RxJS State Management
+* Dynamic Chart Updates
+* Lazy Loading
+* Real-time UI Updates
+* Chart.js Integration
+* Standalone Components
+* SSR-safe Rendering
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+# Future Improvements
+
+* Search & Filtering
+* Pagination
+* Dark Mode
+* Animations
+* API Integration
+* Persistent Storage
+
+---
+
+# Author
+
+Priyanka Inagadapu
+
+
